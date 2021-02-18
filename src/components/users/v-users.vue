@@ -16,7 +16,7 @@
 
 <script>
 import vUser from "./v-user";
-import { mapActions, mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 
 
 export default {
@@ -36,13 +36,13 @@ export default {
     return {};
   },
   methods: {
-    ...mapActions(["GET_USERS_FROM_API"]),
+    // ...mapActions(["GET_USERS_FROM_API"]),
   },
   computed: {
     ...mapGetters(["USERS"]),
   },
   mounted() {
-    this.GET_USERS_FROM_API();
+    // this.GET_USERS_FROM_API();
   },
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="v-main">
+    <v-main-header/>
     <router-view></router-view>
     <!-- <VUsers :users_data="USERS" /> -->
   </div>
@@ -8,21 +9,27 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import VMainHeader from './v-main-header.vue';
 // import VUsers from "./users/v-users";
 
 export default {
   name: "v-main",
   components: {
+    VMainHeader
     // VUsers,
   },
   methods: {
     ...mapActions(["GET_USERS_FROM_API"]),
+    ...mapActions(["GET_POSTS_FROM_API"])
+  
   },
   computed: {
     ...mapGetters(["USERS"]),
+    ...mapGetters(["POSTS"])
   },
   mounted() {
     this.GET_USERS_FROM_API();
+    this.GET_POSTS_FROM_API();
   },
 };
 </script>
