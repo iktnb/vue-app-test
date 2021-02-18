@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    
+    <!-- <VUsers :users_data="USERS" /> -->
+    <vMain/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import { mapActions, mapGetters } from "vuex";
+import vMain from './components/v-main'
+// import VUsers from "./components/users/v-users";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    // VUsers,
+    vMain
+  },
+  methods: {
+    // ...mapActions(["GET_USERS_FROM_API"]),
+  },
+  computed: {
+    // ...mapGetters(["USERS"]),
+  },
+  mounted() {
+    // this.GET_USERS_FROM_API();
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  
 }
 </style>
