@@ -1,6 +1,8 @@
 <template>
   <div class="v-posts">
-    <v-post-item v-for="row in paginatedUser" :key="row.id" :row_post="row" />
+
+    <div class="button-div"><router-link to="/createPost"><button>Create New post</button></router-link></div>
+    <v-post-item v-for="row in paginatedUser" :key="row.id" :row_post="row"/>
 
     <div class="v-posts__pagination">
       <div
@@ -26,6 +28,9 @@ export default {
     pageClick(page) {
       this.pageNumber = page;
     },
+
+
+  
   },
   data() {
     return {
@@ -76,5 +81,9 @@ export default {
   background: lightslategray;
   cursor: pointer;
   color: white;
+}
+
+.button-div {
+  margin-bottom: 10px;
 }
 </style>

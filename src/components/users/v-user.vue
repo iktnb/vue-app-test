@@ -14,8 +14,8 @@
       <div class="row row__name">{{ row_user.name }}</div>
       <div class="row row__email">{{ row_user.email }}</div>
       <div class="row row__website">{{ row_user.website }}</div>
-      <button class="info-btn" @click="showUserInfo">info</button>
     </div>
+    <p><button class="info-btn" @click="showUserInfo">info</button></p>
   </div>
 </template>
  
@@ -51,17 +51,17 @@ export default {
 </script>
 
 <style>
-
 .v-user-company {
-    color: #ffffff;
+  color: #ffffff;
 }
 .v-user-rows {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  border: 1px grey solid;
 }
 .row {
   text-align: left;
-  flex-basis: 25%;
   padding-bottom: 15px;
 }
 </style>

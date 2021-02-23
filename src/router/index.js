@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 import vUsers from "../components/users/v-users"
 import vPosts from "../components/posts/v-posts"
+import vPostPage from "../components/posts/v-post-page"
+import vNewPost from "../components/posts/v-new-post"
 
 Vue.use(Router)
 
@@ -17,6 +19,16 @@ const router = new Router( {
             path: '/userList',
             name: 'Users',
             component: vUsers
+        },
+        {
+            path: '/post',
+            name: 'post',
+            component: vPostPage
+        },
+        {
+            path: '/createPost',
+            name: 'newPost',
+            component: vNewPost
         }
     ]
 })

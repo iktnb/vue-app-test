@@ -1,5 +1,5 @@
 <template>
-  <div class="v-post-item">
+  <div class="v-post-item" @click="goToPostPage(row_post.id)">
     <span class="title">{{ row_post.title }}</span>
     <span class="body">{{ row_post.body }}</span>
   </div>
@@ -14,6 +14,11 @@ export default {
       default: () => {
         return {};
       },
+    },
+  },
+  methods: {
+    goToPostPage(id) {
+      this.$router.push({ name: "post", query: { post: id } });
     },
   },
 };

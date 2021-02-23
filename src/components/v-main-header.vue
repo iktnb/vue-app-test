@@ -1,7 +1,7 @@
 .<template>
   <div class="v-main-header">
     <router-link to="/posts" active-class="grey"><button>Posts</button></router-link>
-    <h1>Header</h1>
+    <h1>TestApp</h1>
     <router-link to="/userList"><button>UserList</button></router-link>
   </div>
 </template>

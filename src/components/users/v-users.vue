@@ -1,12 +1,5 @@
 <template>
   <div class="v-users">
-    <div class="v-users__header">
-      <p>Id</p>
-      <p>Name</p>
-      <p>Email</p>
-      <p>Website</p>
-      <div></div>
-    </div>
     <hr />
     <div class="v-user__body">
       <vUser v-for="row in USERS" :key="row.id" :row_user="row" />
@@ -17,7 +10,6 @@
 <script>
 import vUser from "./v-user";
 import { mapGetters } from "vuex";
-
 
 export default {
   name: "v-users",
@@ -53,10 +45,4 @@ export default {
   margin: 0 auto;
 }
 
-.v-users__header {
-  display: flex;
-  justify-content: space-around;
-  text-align: left;
-  flex-basis: 25%;
-}
 </style>

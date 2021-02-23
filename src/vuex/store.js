@@ -7,7 +7,8 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         users: [],
-        posts: []
+        posts: [],
+        comments: []
         
     },
     actions: {
@@ -26,6 +27,14 @@ const store = new Vuex.Store({
             .then((response) => {
                 commit('SET_POSTS_TO_VUEX', response.data)
             })
+        },
+        GET_COMMENTS_FROM_API({commit}) {
+            return axios('https://jsonplaceholder.typicode.com/comments', {
+                method: "GET"
+            })
+            .then((response) => {
+                commit('SET_COMMENTS_TO_VUEX', response.data)
+            })
         }
     },
     mutations: {
@@ -34,6 +43,9 @@ const store = new Vuex.Store({
         },
         SET_POSTS_TO_VUEX: (state, posts) => {
             state.posts = posts
+        },
+        SET_COMMENTS_TO_VUEX: (state, comments) => {
+            state.comments = comments
         }
     },
     getters: {
@@ -42,6 +54,9 @@ const store = new Vuex.Store({
         },
         POSTS(state) {
             return state.posts;
+        },
+        COMMENTS(state) {
+            return state.comments;
         }
     }
 
